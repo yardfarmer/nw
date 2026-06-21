@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { narrationPlugin } from './narration-plugin'
 
 export default defineConfig({
   title: '杭州事业编备考',
@@ -8,6 +9,10 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   ignoreDeadLinks: true,
+
+  vite: {
+    plugins: [narrationPlugin()],
+  },
 
   head: [
     ['meta', { name: 'theme-color', content: '#c0392b' }],

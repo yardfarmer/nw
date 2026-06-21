@@ -1,0 +1,10 @@
+/* 播放器全局样式补充：移动端触摸友好 */
+.vp-doc {
+  scroll-padding-bottom: 180px;
+}
+
+/* 防止播放器遮挡锚点跳转 */
+.vp-doc :target {
+  scroll-margin-top: 60px;
+  scroll-margin-bottom: 180px;
+}
