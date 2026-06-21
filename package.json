@@ -1,0 +1,14 @@
+{
+  "name": "hangzhou-shiyebian-kb",
+  "version": "2.0.0",
+  "description": "2026 杭州事业编备考知识库",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.5.0"
+  }
+}
