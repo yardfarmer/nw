@@ -4,6 +4,7 @@ export default defineConfig({
   title: '杭州事业编备考',
   description: '2026 浙江杭州区县事业单位考试备考知识库',
   lang: 'zh-CN',
+  base: '/nw/',
   cleanUrls: true,
   lastUpdated: true,
   ignoreDeadLinks: true,
@@ -180,7 +181,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/' }
+      { icon: 'github', link: 'https://github.com/yardfarmer/nw' }
     ],
 
     search: {
