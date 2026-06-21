@@ -57,14 +57,23 @@ function findBlockEnd(idx: number): number {
   return i
 }
 
-async function loadPage(pagePath: string) {
+async function loadPage(rawPath: string) {
   audio.stopSpeaking()
   isPlaying.value = false
   showRating.value = false
   isReviewing.value = false
   reviewQueue.value = []
   statusMsg.value = ''
-  const d = await fetchNarration(pagePath)
+
+  // 规范化 path：去 base 前缀、去 .html、解 URL 编码
+  const base = import.meta.env.BASE_URL || '/'
+  let p = rawPath
+  if (base !== '/' && p.startsWith(base)) p = p.slice(base.length)
+  if (!p.startsWith('/')) p = '/' + p
+  try { p = decodeURIComponent(p) } catch {}
+  p = p.replace(/\.html$/, '').replace(/\/index$/, '/') || '/'
+
+  const d = await fetchNarration(p)
   doc.value = d
   if (!d) {
     segments.value = []
